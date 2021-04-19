@@ -3,7 +3,15 @@
 export interface ICharacter {
   id: string;
   name?: string;
-  // TODO fleiri týpur
+  birthYear : string;
+  eyeColor : string;
+  hairColor : string;
+  height : number;
+  mass : number;
+}
+
+export interface IPeopleResponse {
+  name : string;
 }
 
 export interface ICharacterConnection {
