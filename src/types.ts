@@ -15,9 +15,7 @@ export interface IPeopleResponse {
 }
 
 export interface ICharacterConnection {
-  [index : number]: {
-    characters : ICharacter;
-  }
+    characters : [ICharacter];
 }
 
 export interface IFilm {

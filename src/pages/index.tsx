@@ -28,7 +28,7 @@ export default function PageComponent(
       </Head>
       <h1>Star Wars films</h1>
       {films.map((film, i) => (
-        <Film key={i} title={film.title} episodeID={film.episodeID}/>
+        <Film key={i} title={film.title} episodeID={film.episodeID} openingCrawl={film.openingCrawl}  Characters={film.characterConnection.characters}/>
       ))}
     </Layout>
   );
@@ -38,8 +38,14 @@ const query = `
 query {
   allFilms{
     films{
-      title
       episodeID
+      title
+      openingCrawl
+      characterConnection{
+        characters{
+          name
+        }
+      }
     }
   }
 }
