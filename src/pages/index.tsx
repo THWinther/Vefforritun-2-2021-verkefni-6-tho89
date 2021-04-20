@@ -6,7 +6,7 @@ import { Film } from '../components/film/Film';
 import { Layout } from '../components/layout/Layout';
 import { characterFragment } from '../graphql/characterFragment';
 import { fetchSwapi } from '../lib/swapi';
-import { IFilm } from '../types';
+import { IFilm, IFilms } from '../types';
 
 export type PageProps = {
   films: Array<IFilm> | null;
@@ -35,18 +35,24 @@ export default function PageComponent(
 }
 
 const query = `
-  {
-    # TODO sækja gögn um myndir
+query {
+  allFilms{
+    films{
+      episodeID
+      title
+      openingCrawl
+    }
   }
-  ${characterFragment}
+}
+
 `;
 
 export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
   const films = await fetchSwapi<any>(query); // TODO EKKI any
-
+  console.log(films);
   return {
     props: {
-      films,
+      films: films?.allFilms?.films ?? null,
     },
   };
 };
