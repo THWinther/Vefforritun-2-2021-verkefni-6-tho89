@@ -28,7 +28,7 @@ export default function PageComponent(
       </Head>
       <h1>Star Wars films</h1>
       {films.map((film, i) => (
-        <Film key={i} />
+        <Film key={i} title={film.title}/>
       ))}
     </Layout>
   );
@@ -38,9 +38,7 @@ const query = `
 query {
   allFilms{
     films{
-      episodeID
       title
-      openingCrawl
     }
   }
 }
@@ -49,7 +47,7 @@ query {
 
 export const getServerSideProps: GetServerSideProps<PageProps> = async () => {
   const films = await fetchSwapi<any>(query); // TODO EKKI any
-  console.log(films);
+  console.log(films.allFilms.films);
   return {
     props: {
       films: films?.allFilms?.films ?? null,
