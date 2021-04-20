@@ -28,7 +28,7 @@ export default function PageComponent(
       </Head>
       <h1>Star Wars films</h1>
       {films.map((film, i) => (
-        <Film key={i} title={film.title}/>
+        <Film key={i} title={film.title} episodeID={film.episodeID}/>
       ))}
     </Layout>
   );
@@ -39,6 +39,7 @@ query {
   allFilms{
     films{
       title
+      episodeID
     }
   }
 }
