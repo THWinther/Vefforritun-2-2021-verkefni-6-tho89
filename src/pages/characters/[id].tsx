@@ -37,8 +37,8 @@ export default function PageComponent(
 export const getServerSideProps: GetServerSideProps<PageProps> = async ({ params }) => {
   const id = params?.id as string | undefined;
   const query = `
-    query($id: ID!) {
-        person(id: ${id}){
+    query{
+        person(id: "${id}"){
           name
           birthYear
           eyeColor
