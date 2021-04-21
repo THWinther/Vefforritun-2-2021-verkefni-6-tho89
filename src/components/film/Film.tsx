@@ -25,7 +25,7 @@ export function Film({ episodeID , title, openingCrawl, Characters}: Props): JSX
       
       {
         Characters.map(function(d, idx){
-          return (<p key={idx}>{d.name}</p>)
+          return (<Link href={"/"+d.id} key={idx}>{d.name}</Link>)
         })}
       
     </section>
