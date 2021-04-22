@@ -2,12 +2,11 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
+ "scripts": {
+    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint ./src"
-  },
+    "start": "next start -p $PORT"
+    },
   "dependencies": {
     "classnames": "^2.2.6",
     "graphql": "^15.5.0",
