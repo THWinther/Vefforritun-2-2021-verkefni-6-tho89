@@ -49,8 +49,6 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async ({ params
     }
   `;
 
-  console.log(query);
-
   let person = null;
 
   if (id) {

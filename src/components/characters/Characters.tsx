@@ -7,6 +7,7 @@ import { Button } from '../button/Button';
 import { ICharacter } from '../../types';
 
 type Props = {
+  characters : [ICharacter]
 };
 
 /**
@@ -37,7 +38,6 @@ export function Characters({ }: Props): JSX.Element {
     // TODO sækja gögn frá /pages/api/characters.ts (gegnum /api/characters), ef það eru fleiri
     // (sjá pageInfo.hasNextPage) með cursor úr pageInfo.endCursor
   };
-
   return (
     <section className={s.characters}>
       <ul className={s.characters__list}>

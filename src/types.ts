@@ -10,9 +10,6 @@ export interface ICharacter {
   mass : number;
 }
 
-export interface IPeopleResponse {
-  name : string;
-}
 
 export interface ICharacterConnection {
     characters : [ICharacter];
@@ -33,6 +30,10 @@ export interface IFilms {
 
 export interface IAllFilms {
   films : IFilms;
+}
+
+export interface IPeopleResponse{
+  characters : [ICharacter];
 }
 
 // TODO hér ættum við að útbúa interface fyrir öll gögn sem við vinnum með (t.d. IFilm, IPaging)
