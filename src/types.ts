@@ -33,7 +33,7 @@ export interface IAllFilms {
 }
 
 export interface IPeopleResponse{
-  characters : [ICharacter];
+  people : [ICharacter];
 }
 
 // TODO hér ættum við að útbúa interface fyrir öll gögn sem við vinnum með (t.d. IFilm, IPaging)

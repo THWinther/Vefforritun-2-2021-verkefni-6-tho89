@@ -1,6 +1,5 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import { Characters } from '../../components/characters/Characters';
 import Link from 'next/link';
 import { Layout } from '../../components/layout/Layout';
 import { fetchCharacters } from '../../lib/swapi';
@@ -14,7 +13,6 @@ export default function PageComponent(
   data: InferGetServerSidePropsType<typeof getServerSideProps>,
 ): JSX.Element {
   const { peopleResponse } = data;
-  console.log(peopleResponse);
   return (
     <Layout>
       <Head>
